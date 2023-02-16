@@ -423,20 +423,7 @@ public:
     // double rooms
     float get_price()
     {
-        float boardPrice = get_guests();
-        // if (board == breakfast)
-        // {
-        //     boardPrice *= 10;
-        // }
-        // else if (board == half_board)
-        // {
-        //     boardPrice *= 20;
-        // }
-        // else if (board == all_inclusive)
-        // {
-        //     boardPrice *= 50;
-        // }
-        boardPrice = get_guests() * get_price_board(board) * nights;
+        float boardPrice = get_guests() * get_price_board(board) * nights;
         return (singles * priceNightSingle + doubles * priceNightDouble) * nights + boardPrice + (parking ? priceOneDayParking * nights : 0);
 
     }
@@ -589,16 +576,8 @@ public:
     // a public member function with name get_price without parameter returning the calculated price of the accomodation.
     float get_price()
     {
-        // return accomodation->get_price();
         float price = accomodation->get_price();
-        // if (transportOutward != nullptr)
-        // {
-        //     price += transportOutward->get_price();
-        // }
-        // if (transportReturn != nullptr)
-        // {
-        //     price += transportReturn->get_price();
-        // }
+
         return price;
     }
 
